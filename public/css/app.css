@@ -12197,3 +12197,15 @@ header nav ul li a {
   text-decoration: none;
 }
 
+.container .wrapping {
+  padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.container .wrapping .card {
+  width: 200px;
+  margin: 10px;
+}
+
