@@ -6,7 +6,7 @@
                     <a href="{{route('comics.index')}}">Comics List</a>
                 </li>
                 <li>
-                    <a href="#">Update your comic</a>
+                    <a href="{{ route('comics.create') }}">Update your comic</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
