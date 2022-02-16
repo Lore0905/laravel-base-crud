@@ -3,10 +3,10 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="#">Comics List</a>
+                    <a href="{{route('comics.index')}}">Comics List</a>
                 </li>
                 <li>
-                    <a href="#">Details</a>
+                    <a href="#">Update your comic</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
