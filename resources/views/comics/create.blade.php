@@ -1,16 +1,27 @@
 @include('layout.app')
 
-@section('title-page')
-    update
-@endsection
+
 
 @section('main-content')
-    <h1>test</h1>
+    <div class="container">
+        <h1>test</h1>
+    </div>
 @endsection
 
 <section class="container">
 
-    <h1>crea il tuo comics</h1>
+    <h1>Crea il tuo comics</h1>
+
+    {{-- ERRORS --}}
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <form action="{{ route('comics.store') }}" method="post">
         @csrf
