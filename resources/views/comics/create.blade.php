@@ -7,6 +7,7 @@
 @section('main-content')
     <h1>funziona</h1>
 @endsection
+
 <section class="container">
 
     <h1>crea il tuo comics</h1>
