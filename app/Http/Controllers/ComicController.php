@@ -41,6 +41,9 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $form_data = $request->all();
+
+        $request->validate($this->getValidation());
+
         // salviamo il nuovo comic nel database 
         $new_comic = new Comic();
         $new_comic->fill($form_data);
@@ -93,6 +96,9 @@ class ComicController extends Controller
     {
         // prendo i dati modificati del form presente nel file edit.blade.php
         $form_data = $request->all();
+
+        $request->validate($this->getValidation());
+
         // verifico se è prsente id nel database
         $comic_update = Comic::findOrFail($id);
         // se è presente inserisco i dati modificati nel database
@@ -113,5 +119,19 @@ class ComicController extends Controller
         $comic_to_delete->delete();
 
         return redirect()->route('comics.index');
+    }
+
+    // errors
+
+    protected function getValidation(){
+        return [
+            'title' => 'required|max:100',
+            'description' => 'required|max:60000',
+            'thumb' => 'required|max:60000',
+            'price' => 'required|max:10',
+            'series' => 'required|max:50',
+            'sale_date' => 'required|max:15',
+            'type' => 'required|max:50',
+        ];
     }
 }
