@@ -5,7 +5,7 @@
 @endsection
 
 @section('main-content')
-    <h1>funziona</h1>
+    <h1>test</h1>
 @endsection
 
 <section class="container">
@@ -52,7 +52,7 @@
             <input type="text" class="form-control" id="type" name="type">
         </div>
 
-        {{-- serie --}}
+        {{-- sale date --}}
         <div class="mb-3">
             <label for="sale_date" class="form-label">Sale date</label>
             <input type="text" class="form-control" id="sale_date" name="sale_date">
