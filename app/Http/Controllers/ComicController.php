@@ -91,7 +91,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // prendo i dati modificati del form presente nel file edit.blade.php
+        $form_data = $request->all();
+        // verifico se è prsente id nel database
+        $comic_update = Comic::findOrFail($id);
+        // se è presente inserisco i dati modificati nel database
+        $comic_update->update($form_data);
+
+        return redirect()->route('comics.show', [$comic_update->id]);
     }
 
     /**
